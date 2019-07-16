@@ -1,49 +1,48 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Document</title>
-     <link rel="stylesheet" href="style.css">
- </head>
- <body>
-   <div class="header">
-      <div class="orta">
-       <div class="logo">
-           <h3>Start Bootstrap</h3>
-       </div>
-       <div class="menu">
-           <ul>
-               <li>item1</li>
-               <li>item2</li>
-               <li>item3</li>
-               <li>item4</li>
-           </ul>
-       </div>
-    </div>
-   </div> 
-   <div class="favourite">
-       <div class="fav-middle">
-        <h1>YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES</h1>
-        <hr/>
-        <p>Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-        <input type="button" value="Find Out More">
-    </div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a58d6456cd.js"></script>
+</head>
+<body>
+         <div id="all"></div>
+         <hr id="xet"></hr>  
+      <div class="inputs">
+         <h2>Add a new To Do</h2>
+    <input id="tit" type="text" placeholder="Title">
+    <input id="des" type="text" placeholder="Description">
+    <input id="btn" type="submit">
    </div>
-   <div class="getstarted">
-      
-       <h2>We've got what you need!</h2>
-       <hr>
-       <p>Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-        <input type="button" value="Get Started!">
-    </div>
-    <div class="service">
-        <h1>At Your Service</h1>
-        <hr>
-        <div class="icons">
-            
-        </div>
-    </div>
- </body>
- </html>
+  
+   <script>
+     var btn=document.getElementById("btn");
+     var all=document.getElementById("all");
+    
+     btn.onclick=function(){
+        var text=document.getElementById("tit").value;
+        var dext=document.getElementById("des").value;
+         var spantag=document.createElement("span");
+         var spandag=document.createElement("span");
+         var itag=document.createElement("i");
+         itag.className="fas fa-trash";
+         spantag.classList.add("item");
+         spandag.classList.add("idem");
+         itag.classList.add("it")
+         spantag.innerText=text;
+         spandag.innerText=dext;
+         all.appendChild(spantag);
+         all.appendChild(spandag);
+         all.appendChild(itag);
+          document.getElementById("tit").value="";
+          document.getElementById("des").value="";
+            itag.onclick=function(){
+                 this.remove();    
+            }
+         }   
+   </script>
+</body>
+</html>
